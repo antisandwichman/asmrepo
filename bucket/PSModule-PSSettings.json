@@ -2,7 +2,7 @@
     "version": "1.0",
     "url": "https://github.com/antisandwichman/PSSettings/raw/refs/heads/main/PSSettings/archive/PSSettings.zip",
     "extract_to": "",
-    "bin": "Load-SettingsModule.ps1",
+    "bin": "PSSettings\\Load-SettingsModule.ps1",
     "installer": {
         "script": [
             "if (-not (Test-Path -PathType Container \"C:\\Users\\$($env:UserName)\\Documents\\PowerShell\\Modules\")) { New-Item -ItemType Directory -Path \"C:\\Users\\$($env:UserName)\\Documents\\PowerShell\\Modules\"}",
