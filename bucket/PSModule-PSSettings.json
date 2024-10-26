@@ -11,7 +11,7 @@
     },
     "uninstaller": {
         "script": [
-            "Remove-Item -Path \"C:\\Program Files\\PowerShell\\Modules\\PSSettings\" -Recurse -Force"
+            "Remove-Item -Path \"C:\\Users\\$($env:UserName)\\Documents\\PowerShell\\Modules\" -Recurse -Force"
         ]
     }
 }
