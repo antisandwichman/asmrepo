@@ -5,12 +5,13 @@
     "bin": "Load-SettingsModule.ps1",
     "installer": {
         "script": [
-            "if (-not (Test-Path -PathType Container \"C:\\Users\\$($env:UserName)\\Documents\\PowerShell\\Modules\")) { New-Item -ItemType Directory -Path \"C:\\Users\\$($env:UserName)\\Documents\\PowerShell\\Modules\"}"
+            "if (-not (Test-Path -PathType Container \"C:\\Users\\$($env:UserName)\\Documents\\PowerShell\\Modules\")) { New-Item -ItemType Directory -Path \"C:\\Users\\$($env:UserName)\\Documents\\PowerShell\\Modules\"}",
+            "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\PSModule-PSSettings\\current\\PSSettings\" -Destination \"C:\\Users\\$($env:UserName)\\Documents\\PowerShell\\Modules\" -Recurse"
         ]
     },
     "uninstaller": {
         "script": [
-            "Remove-Item -Path \"C:\\Users\\$($env:UserName)\\Documents\\PowerShell\\Modules\" -Recurse -Force"
+            "Remove-Item -Path \"C:\\Program Files\\PowerShell\\Modules\\PSSettings\" -Recurse -Force"
         ]
     }
 }
