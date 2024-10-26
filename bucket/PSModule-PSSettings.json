@@ -1,0 +1,16 @@
+{
+    "version": "1.0",
+    "url": "https://github.com/antisandwichman/PSSettings/blob/main/PSSettings/archive/PSSettings.zip",
+    "extract_to": "",
+    "bin": "Load-SettingsModule.ps1",
+    "installer": {
+        "script": [
+            "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\PSModule-PSSettings\\current\\PSSettings\" -Destination \"C:\\Program Files\\PowerShell\\Modules\" -Recurse"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "Remove-Item -Path \"C:\\Program Files\\PowerShell\\Modules\\PSSettings\" -Recurse -Force"
+        ]
+    }
+}
