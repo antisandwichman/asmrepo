@@ -9,7 +9,7 @@
             "$WScriptShell = New-Object -ComObject WScript.Shell",
             "$shortcut = $WScriptShell.CreateShortcut($toPath)",
             "$shortcut.TargetPath = \"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
-            "$shortcut.Arguments = \"C:\\Users\\$env:UserName\\scoop\\apps\\keiths-admin-script\\keiths_admin_script.ps1\"",
+            "$shortcut.Arguments = \"C:\\Users\\$env:UserName\\scoop\\apps\\keiths-admin-script\\current\\keiths_admin_script.ps1\"",
             "$shortcut.Save()"
         ]
     }
