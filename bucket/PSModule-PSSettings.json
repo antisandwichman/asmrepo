@@ -5,7 +5,7 @@
     "bin": "Load-SettingsModule.ps1",
     "installer": {
         "script": [
-            "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\PSModule-PSSettings\\current\\PSSettings\" -Destination \"C:\\Program Files\\PowerShell\\Modules\" -Recurse"
+            "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\PSModule-PSSettings\\$version\\PSSettings\" -Destination \"C:\\Program Files\\PowerShell\\Modules\" -Recurse"
         ]
     },
     "uninstaller": {
