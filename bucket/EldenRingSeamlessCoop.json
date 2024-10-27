@@ -4,29 +4,29 @@
   "extract_to": "",
   "installer": {
     "script": [
-        "$ersc_scoop_info_path = \"C:\\Users\\$env:UserName\\scoop\\apps\\EldenRingSeamlessCoop\\$version\\ersc_scoop_info.json\"",
-        "Read-Host -Prompt \"You will be prompted to select your eldenring.exe file. Press Enter to continue\"",
-        "Add-Type -AssemblyName System.Windows.Forms",
-        "$dialog = New-Object System.Windows.Forms.OpenFileDialog",
-        "$dialog.InitialDirectory = \"C:\\\"",
-        "$dialog.Filter = \"Elden Ring (eldenring.exe)|eldenring.exe\"",
-        "$dialog.Title = \"Select your Elden Ring executable\"",
-        "if ($dialog.ShowDialog() -eq \"OK\") { $target = [System.IO.Path]::GetDirectoryName($($dialog.FileName)) }else{ Write-Error \"No file selected. Exiting script.\" -ErrorAction Stop }",
-        "$ersc_scoop_info = @{ install_location = $target }",
-        "$ersc_scoop_info | ConvertTo-Json -Depth 100 | Set-Content -Path $ersc_scoop_info_path",
-        "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\EldenRingSeamlessCoop\\$version\\SeamlessCoop\" -Destination $target -Recurse -Force",
-        "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\EldenRingSeamlessCoop\\$version\\ersc_launcher.exe\" -Destination $target -Force"
+      "$ersc_scoop_info_path = \"C:\\Users\\$env:UserName\\scoop\\apps\\EldenRingSeamlessCoop\\$version\\ersc_scoop_info.json\"",
+      "Read-Host -Prompt \"You will be prompted to select your eldenring.exe file. Press Enter to continue\"",
+      "Add-Type -AssemblyName System.Windows.Forms",
+      "$dialog = New-Object System.Windows.Forms.OpenFileDialog",
+      "$dialog.InitialDirectory = \"C:\\\"",
+      "$dialog.Filter = \"Elden Ring (eldenring.exe)|eldenring.exe\"",
+      "$dialog.Title = \"Select your Elden Ring executable\"",
+      "if ($dialog.ShowDialog() -eq \"OK\") { $target = [System.IO.Path]::GetDirectoryName($($dialog.FileName)) }else{ Write-Error \"No file selected. Exiting script.\" -ErrorAction Stop }",
+      "$ersc_scoop_info = @{ install_location = $target }",
+      "$ersc_scoop_info | ConvertTo-Json -Depth 100 | Set-Content -Path $ersc_scoop_info_path",
+      "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\EldenRingSeamlessCoop\\$version\\SeamlessCoop\" -Destination $target -Recurse -Force",
+      "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\EldenRingSeamlessCoop\\$version\\ersc_launcher.exe\" -Destination $target -Force"
     ]
   },
   "uninstaller": {
     "script": [
-        "$ersc_scoop_info_path = \"C:\\Users\\$env:UserName\\scoop\\apps\\EldenRingSeamlessCoop\\$version\\ersc_scoop_info.json\"",
-        "$ersc_scoop_info = Get-Content $ersc_scoop_info_path -ErrorAction Stop | Out-String | ConvertFrom-Json",
-        "$gamepath = $($ersc_scoop_info.install_location)",
-        "Write-Host $($ersc_scoop_info.install_location)\\SeamlessCoop",
-        "Write-Host $($ersc_scoop_info.install_location)\\ersc_launcher.exe",
-        "Remove-Item -Path $gamepath\\SeamlessCoop -Recurse -Force",
-        "Remove-Item -Path $gamepath\\ersc_launcher.exe -Force"
+      "$ersc_scoop_info_path = \"C:\\Users\\$env:UserName\\scoop\\apps\\EldenRingSeamlessCoop\\$version\\ersc_scoop_info.json\"",
+      "$ersc_scoop_info = Get-Content $ersc_scoop_info_path -ErrorAction Stop | Out-String | ConvertFrom-Json",
+      "$gamepath = $($ersc_scoop_info.install_location)",
+      "Write-Host $($ersc_scoop_info.install_location)\\SeamlessCoop",
+      "Write-Host $($ersc_scoop_info.install_location)\\ersc_launcher.exe",
+      "Remove-Item -Path $gamepath\\SeamlessCoop -Recurse -Force",
+      "Remove-Item -Path $gamepath\\ersc_launcher.exe -Force"
     ]
   }
 }
