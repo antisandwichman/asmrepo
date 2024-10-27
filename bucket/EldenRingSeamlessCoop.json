@@ -12,8 +12,8 @@
         "$dialog.Filter = \"Elden Ring (eldenring.exe)|eldenring.exe\"",
         "$dialog.Title = \"Select your Elden Ring executable\"",
         "if ($dialog.ShowDialog() -eq \"OK\") { $target = [System.IO.Path]::GetDirectoryName($($dialog.FileName)) }else{ Write-Error \"No file selected. Exiting script.\" -ErrorAction Stop }",
-        "$ersc_scoop_info = @{ install_location = $target }"
-        "$ersc_scoop_info | ConvertTo-Json -Depth 100 | Set-Content -Path $ersc_scoop_info_path"
+        "$ersc_scoop_info = @{ install_location = $target }",
+        "$ersc_scoop_info | ConvertTo-Json -Depth 100 | Set-Content -Path $ersc_scoop_info_path",
         "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\EldenRingSeamlessCoop\\$version\\SeamlessCoop\" -Destination $target -Recurse -Force",
         "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\EldenRingSeamlessCoop\\$version\\ersc_launcher.exe\" -Destination $target -Force"
     ]
