@@ -1,6 +1,6 @@
 {
     "version": "1.8.9",
-    "url": "https://github.com/LukeYui/EldenRingSeamlessCoopRelease/releases/download/v$version/ersc.zip",
+    "url": "https://github.com/LukeYui/EldenRingSeamlessCoopRelease/releases/download/v1.8.9/ersc.zip",
     "extract_to": "",
     "installer": {
         "script": [
