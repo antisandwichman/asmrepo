@@ -22,10 +22,11 @@
     "script": [
         "$ersc_scoop_info_path = \"C:\\Users\\$env:UserName\\scoop\\apps\\EldenRingSeamlessCoop\\$version\\ersc_scoop_info.json\"",
         "$ersc_scoop_info = Get-Content $ersc_scoop_info_path -ErrorAction Stop | Out-String | ConvertFrom-Json",
+        "$gamepath = $($ersc_scoop_info.install_location).Substring(0, $ersc_scoop_info.install_location.length - 1)",
         "Write-Host $($ersc_scoop_info.install_location)\\SeamlessCoop",
         "Write-Host $($ersc_scoop_info.install_location)\\ersc_launcher.exe",
-        "Remove-Item -Path $($ersc_scoop_info.install_location)\\SeamlessCoop -Recurse -Force",
-        "Remove-Item -Path $($ersc_scoop_info.install_location)\\ersc_launcher.exe -Force"
+        "Remove-Item -Path $gamepath\\SeamlessCoop -Recurse -Force",
+        "Remove-Item -Path $gamepath\\ersc_launcher.exe -Force"
     ]
   }
 }
