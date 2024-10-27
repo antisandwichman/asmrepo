@@ -6,8 +6,11 @@
     scoop bucket add asmrepo https://github.com/antisandwichman/asmrepo
 ## Available Apps
 **ASM-ERSM** - Elden Ring save manager
+
 **EldenRingSeamlessCoop** - Elden Ring Seamless Coop mode 
+
 **PSModule-PSSettings** - A PowerShell module I wrote to create and modify settings for a script using JSON
+
 **keiths-admin-script** - A script for systems administrators that contains some common functions
 ## Installing an app
 
