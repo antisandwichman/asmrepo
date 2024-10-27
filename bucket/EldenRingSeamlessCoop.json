@@ -1,0 +1,24 @@
+{
+    "version": "1.8.9",
+    "url": "https://github.com/LukeYui/EldenRingSeamlessCoopRelease/releases/download/v$version/ersc.zip",
+    "extract_to": "",
+    "installer": {
+        "script": [
+            "Read-Host -Prompt \"You will be prompted to select your eldenring.exe file. Press Enter to continue\"",
+            "Add-Type -AssemblyName System.Windows.Forms",
+            "$dialog = New-Object System.Windows.Forms.OpenFileDialog",
+            "$dialog.InitialDirectory = \"C:\\\"",
+            "$dialog.Filter = \"Elden Ring (eldenring.exe)|eldenring.exe\"",
+            "$dialog.Title = \"Select your Elden Ring executable\"",
+            "if ($dialog.ShowDialog() -eq \"OK\") { $target = [System.IO.Path]::GetDirectoryName($($dialog.FileName)) }else{ Write-Error \"No file selected. Exiting script.\" -ErrorAction Stop }",
+            "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\PSModule-PSSettings\\$version\\SeamlessCoop\" -Destination $target -Recurse -Force",
+            "Copy-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\PSModule-PSSettings\\$version\\ersc_launcher.exe\" -Destination $target -Force"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "Remove-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\PSModule-PSSettings\\$version\\SeamlessCoop\" -Recurse -Force",
+            "Remove-Item -Path \"C:\\Users\\$env:UserName\\scoop\\apps\\PSModule-PSSettings\\$version\\ersc_launcher.exe\" -Force"
+        ]
+    }
+}
